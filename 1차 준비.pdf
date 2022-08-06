@@ -1,0 +1,308 @@
+인공지능 멘토링
+
+
+teachable Machine 으로 AI 헬스 트레이너 만들기
+https://www.youtube.com/watch?v=9SwdGFzFb5Y
+,패캠 휴먼pose 인식
+논문 fasterpose:https://eehoeskrap.tistory.com/650?category=816075
+yolov7 pose estimation?
+
+카카오 VX 이야기, 사용 
+human pose estimation 모델연구 개발 object detection & tracking 모델 연구 개발 optical character recognition 모델 및 시스템 개발, systel transfer, image matching 을 활용한 컨텐츠 개발
+현재 sota:
+https://github.com/vitae-transformer/vitpose
+혹은 yolov7pose?
+Pose estimation
+
+yolov7-w6-pose.pt
+
+공개프로젝트:
+딥러닝 기반 운동자세 교정 프로그램:
+https://github.com/CSID-DGU/2019-2-OSSP1-3355-3
+
+
+지하철 이상 행동인식 알고리즘 개발
+http://af-class.space/task/detail.do?taskId=T001632
+본 대회에서는 지하철에서 발생하는 이상행동을 5가지{0: 유기, 1: 에스컬레이터 전도, 2: 실신, 3: 환경 전도, 4: 절도 로 분류
+
+github:  3D-resnet50 < resnet50
+https://github.com/cjf8899/Development_of_abnormal_behavior_recognition
+ 베이스라인 활용 가능한 참고 코드
+https://github.com/kenshohara/3D-ResNets-PyTorch
+https://github.com/okankop/Efficient-3DCNNs
+https://github.com/craston/MARS
+
+
+
+
+일단하나
+https://github.com/jayita13/AUTOMATED-TRAFFIC-MANAGEMENT-SYSTEM
+
+스마트 교차로
+단순 설명 https://lotgroup.eu/product/smart-city/intersection-control-system/
+논문 : https://www.sciencedirect.com/science/article/abs/pii/S0957417419303847
+-이게 도움이 될지?
+https://github.com/intel/wireless-network-ready-intelligent-traffic-management
+오브젝트 트레킹:https://github.com/LeonLok/Multi-Camera-Live-Object-Tracking
+논문2:
+Automated Approach for Computer Vision-based Vehicle Movement Classification at Traffic Intersection
+
+아두이노 프로젝트
+https://github.com/ajkd/Traffic-Light-Control-Using-Image-Processing-With-openCV
+:약간 이것처럼 신호등 켜지고 꺼지고를 실시간 영상인식을 통해서 제공하는게 좋을듯
+테스트 비디오 가져오기, 학습을 변경할 수 있는지 아니면 새로짜야하는지?(yolov로?)
+, 순서 큐도 필요할듯(계속 기다릴순 없으므로)
+, 신호등과 횡단보도도 생각해야겠죠, 그리고 오류있을수 있으므로
+1)있는데 없는걸로 탐지 -> 탐지 영역, cctv 갯수(인스턴스) 늘려서 교차 검증 갯수 늘리기
+있는데 없는 걸로 탐지:
+2)없는데 있는 걸로 탐지 ->데이터수나 학습으로 조정, 교차 검증 갯수 늘리기
+
+한국 졸업프로젝트
+https://github.com/ljh415/2019_fianlproject
+1-1
+
+
+Car Detection
+배경제거, 움직이는 물체는 contour로 표시
+ROI(파란 박스)안에서만 ID부여, Centroid를 통해 추적
+이후 차량수는 다음 1-2에서 간단하게 설명
+Socket Communication (Server)
+영상 시작과 함께 Multi Processing을 통해 Car Detection과 Socket Communication을 함께 실행
+시작과 함께 연결을 대기
+Car Detection을 수행하면서 중간 중간 Client(신호등)의 요청이 있으면 현재 Counting한 값들을 소켓으로 전송
+각 교차로별 txt파일들(Area A, B, C, D)을 읽어들여 한 번에 Client(신호등)에 전송
+
+및 신호등 띄우기
+
+Yolov7:https://eehoeskrap.tistory.com/651
+https://github.com/wongkinyiu/yolov7
+
+혹은 밑에걸활용해서 카운팅하고, 도로는 고정이므로 해당 라인 영역에서 탐지시
+https://github.com/VedantKhairnar/Adaptive-Traffic-Signal-Control-System
+방향제어, 가는 방향은 몇가지로 정해져있을 수 있음
+PREDICTION
+
+Comparison of Four counts(lanes) is then done and lane with maximum number of vehicles is given green signal for that timestamp. Process continues for next timestamp.
+
+Green signal to lane number 4 //prediction
+
+{1: 33, 2: 12, 3: 15, 4: 42} //lane numbers and no. of car count in a dictionary
+
+Green signal to lane number 1
+
+{1: 117, 2: 28, 3: 32}
+
+Green signal to lane number 3
+
+{2: 40, 3: 49, 4: 45}
+
+Green signal to lane number 2
+
+{1: 46, 2: 55, 4: 86}
+
+Green signal to lane number 1
+
+{1: 114, 3: 22, 4: 75}
+
+FUTURE SCOPE
+
+1.Criminal tracking for rules violation and subsequent signal forwarding to nearest police station.
+
+2.Collision detection & prediction.
+
+3.Number plate detection.
+
+4.Emergency vehicle detection like ambulance,fire brigade,police van, etc.
+v2x
+도로에 운행하는 차량에 적용 가능한 모든 형태의 통신 방식
+https://github.com/TianzhenLi/Intelligent-Intersection (시뮬레이션)
+
+차량, 보행자 검출 
+교통량 분석
+정지차량수
+효율적 교통신호 생성
+차량속도 수집
+차량 밀도 수집
+교차로 감응신호 수집
+신호제어시스템 연계
+=
+교차로 설정
+교차로 명칭설정
+방향 명칭 설정
+차선수 설정
+도로 및 차선 설정
+
+교통신호 생성
+교차로의 실시간 교통정보를 바탕으로 유동적 교통신호 생성
+(동서남북 차선정보, 차량속도, 차량밀도)
+
+도로 및 차선 설정
+도로명 설정
+방향 설정
+방향 차선 설정
+
+교통 통계
+통행량
+정지 차량 수
+밀집도
+일일/일간/주간/월간
+
+c++, opencv 사용해야 최적화 가능할 수 있을듯
+오픈소스인 다크넷 사용
+(파이썬보다 월등한 성능, 사람이 가려지는 경우 실패하나 트래킹 기술로 문제 해결)
+자동차는 커서 왠만큼 가려져도 인식문제 없음, 야간에도 가로등 불빛 정도면 충분히 감지
+비가 와도 눈이 와도 충분함 그러나 안개 날씨에는 취약해 수동으로 변환
+오인식율은 매우 낮으며 해결가능할듯
+
+개발한 추천신호는 선입선출 방식
+대기 순서대로 자동차나 보행자에게 신호 부여
+신호간 충돌우려 x
+그러나 예시이므로
+
+
+
+공통:
+비즈니스 목표가 무엇인지?
+실제 현실에 적용한다 생각하고, 현재 적용중인 도시, 공공기업 
+만약 제공한다면, 발표 등 마케팅 등을 어떻게 제안하고 비즈니스 제안을 할 것인지?
+
+빠르게 우선완성해보기 (api 사용)
+특정 부분 최적화, 개선 , 모델 분석, 수정할 수 있도록?, 어떤 부분을 개선하고 싶은지
+로직, 설계 고민, 최적화 한다면?
+
+취업, 방향성, 백엔드인지? 인공지능인지? 인공지능이라면 어떤 분야를 할 것인지?
+논문 분석, 읽기, 구현에 관하여. 케글, 데이터분석에 관하여
+학사, 석사 , 박사의 차이? 요즘 추세에 관하여
+실무에서 일을하기 위해, 혹은 해당 분야에 대해 취업하기 위해서 어떻게 해야하는지
+취업공고 보고 해당 분야 준비하기.
+정확히 준비해야하는 기술.
+공부방법. (백엔드냐 어떤 분야에 대해 준비하느냐에 따라 다름)
+어떤 분야로 갈것인지 확실히 우선 고민하고 방향성을 정하는 것이 중요.
+해당 분야에 대해 적절한 조언 해주기.
+
+wanted , 로켓펀치, 주니어 개발자 채용, 개발바닥, 인프런(중에서도 좋은 강의)
+추천할만한 책.
+
+—인공지능에 대해 얘기해보자면
+Cs 무슨 강의(스탠포드)
+모두의 딥러닝 추천.
+네이버 부스트 코스?
+논문 분석. 트렌드에 대해(자신이 지원하고자 하는 분야의 역사, 트렌드 추세, 소타는 다알아야함)
+
+
+구동 및 성능 재현성 검증
+구글 Colab에서 작동하는 train.ipynb 파일 공유
+구글 Colab에서 작동하는 test.ipynb 파일 공유
+상기 ipynb를 구동하기 위한 필요한 파일 (모델 가중치 및 외부파일) 공유
+모델 설명서 제출
+6.1 평가 방법
+총 120개의 비디오 클립에 대한 이상행동의 판별 결과를 제출.
+제출해야하는 파일은 json format의 파일로 120개의 비디오 클립에 대한 판별 결과를 포함
+제출 파일의 포맷은 { "videoclip_name": label, … } 의 형태
+Accuracy Score는 120개의 클립에 대한 이상행동 예측 결과와 실제 값이 일치하는 개수를 활용하여 아래와 같이 산출. 여기서 1(x)는 indicator function을 나타냄.
+[크기변환]115.png
+
+양식 예시
+
+
+AIFactory 제 1회 경진대회 코드 설명자료
+-  oooo AI 기반 알고리즘 경진대회 -
+대회 참가자 (홍길동)
+2020년 01월 00일
+
+라이브러리 및 데이터 (Library & Data)
+
+
+
+(예시)
+데이터를 불러올 때 인코딩 문제 때문에 제공 파일을 텍스트 파일로 변환 후 불러옴
+데이터 테이블 형태인 fread로 텍스트 파일을 읽음
+
+code
+
+
+작성요령
+
+라이브러리 및 데이터에 대한 분석 결과에 대한 내용 서술
+
+
+데이터 전처리 (Data Cleansing & Pre-Processing)
+
+
+
+(예시)
+날짜와 시간을 합친 ‘transacted_datetime’ 변수를 생성
+환불은 로그를 씌웠을 때 무한대가 나오기 때문에 제거하기로 결정
+
+code
+
+
+작성요령
+
+데이터의 정제/통합/정리/변환 등 데이터 전처리 결과에 대한 내용 서술 
+
+
+탐색적 자료 분석 (Exploratory Data Analysis)
+
+
+
+(예시)
+상점별 시계열 데이터의 AR값과 adp.test p-value값을 계산
+ar차수와 adf_p의 boxplot을 보면 ar차수는 대부분의 데이터가 2이하 이고,대부분의 데이터가 차분이 필요해 보임
+
+code
+
+
+작성요령
+
+다양한 각도에서 관찰하고 이해하는 과정으로 데이터를 분석하기 전에 그래프나 통계적인 방법으로 자료를 직관적으로 바라본 결과에 대한 내용 서술
+
+
+변수 선택 및 모델 구축 (Feature Engineering & Initial Modeling)
+
+
+
+(예시)
+매출액 변동계수 변수 생성
+최종 feature로 store_id,amount,yyyymm(년월),CV(변동계수)선택
+
+code
+
+
+작성요령
+
+기법 선택 및 변수 선정에 대한 내용 서술
+구축된 딥러닝 모델에 대한 내용 서술
+
+
+모델 학습 및 검증 (Model Tuning & Evaluation)
+
+
+
+(예시)
+auto.arima,stl,ets모형을 각각 0.33의 동일한 가중치로 적합
+auto.arima 파라미터만 ndiffs함수와 사전 ar값 조사를 통해 max.p를 2로 고정
+
+code
+
+
+작성요령
+
+제공된 데이터셋 기반 모델 학습 및 검증에 대한 내용 서술
+
+
+결과 및 결언 (Conclusion & Discussion)
+
+
+
+(예시)
+로그를 취했을 때 과대계상되는 상점들을 명확하게 구분방법을 알 필요가 있음
+한달 단위로 리샘플링 했지만 다른 방식으로도 해볼 필요가 있음
+
+code
+
+
+작성요령
+
+내용 중에서 가장 중요한 점을 다시 한 번 강조하고
+경진대회 이후 모델 보완 및 추가 연구에 대한 방향성 등 서술
